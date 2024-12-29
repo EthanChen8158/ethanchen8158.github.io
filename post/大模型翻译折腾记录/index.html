@@ -1,0 +1,47 @@
+<!DOCTYPE html> <html lang="en"> <head><meta charset="UTF-8"><link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Ethan'Blog"><meta name="msapplication-TileColor" content="#000000"><meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><meta name="description" content="自从2022年12月尝试过ChatGPT以来，就一直在不断尝试用大模型来进行翻译，陆陆续续试过许多模型，但总是不太完美，但是到最近，DeepSeek-V3发布后总算找到一个比较好用的了。"><link rel="icon" href="/favicon.ico"><title>大模型翻译折腾记录 | Ethan</title><link rel="stylesheet" href="/_astro/_page_.D2T3RsNy.css">
+<style>.outlines a[data-anchor-tag=H1]{margin-left:0}.outlines a[data-anchor-tag=H2]{margin-left:12px}.outlines a[data-anchor-tag=H3]{margin-left:24px}.outlines a[data-anchor-tag=H4]{margin-left:36px}.outlines a[data-anchor-tag=H5]{margin-left:48px}.outlines a[data-anchor-tag=H6]{margin-left:60px}
+._tabset_selm3_1 ._tab-panel_selm3_1{display:none}._tabset_selm3_1 ._tab-panels_selm3_4{display:flex}._tabset_selm3_1 input[data-tab-name=direct]{display:none}._tabset_selm3_1 input[data-tab-name=direct]:checked~._tab-panels_selm3_4 ._tab-panel_selm3_1[data-tab-name=direct]{display:block}._tabset_selm3_1 input[data-tab-name=direct]:checked~._tab-labels_selm3_13 label[data-tab-name=direct]{border-bottom:2px solid red}._tabset_selm3_1 input[data-tab-name=app]{display:none}._tabset_selm3_1 input[data-tab-name=app]:checked~._tab-panels_selm3_4 ._tab-panel_selm3_1[data-tab-name=app]{display:block}._tabset_selm3_1 input[data-tab-name=app]:checked~._tab-labels_selm3_13 label[data-tab-name=app]{border-bottom:2px solid red}
+</style>
+<link rel="stylesheet" href="/_astro/_page_.BIc4xYU2.css">
+<link rel="stylesheet" href="/_astro/_id_.DSnNEJbs.css"><script type="module" src="/_astro/hoisted.CuPYge5s.js"></script></head> <body class="text-text bg-bg"> <header class="flex justify-between items-center p-2 gap-2 h-10"> <a href="/" class="text-button text-lg" aria-label="homepage"> <div class="i-ri:menu-4-fill"></div> </a> <div class="flex gap-2 items-center header-operations">   <div id="auth"></div> </div> </header>  <main> <div class="content"> <div class="w-full flex gap-2 pb-2">  </div> <div class="ud-root read-only flex-1"><h1 level="1" id="大模型翻译折腾记录">大模型翻译折腾记录</h1><p>自从2022年12月尝试过ChatGPT以来，就一直在不断尝试用大模型来进行翻译，陆陆续续试过许多模型，但总是不太完美，但是到最近，DeepSeek-V3发布后总算找到一个比较好用的了。</p><p>最早用过GPT-3.5，但是最大的问题是购买API的门槛太高了，对调用IP也有要求，此外自己也不太喜欢用中转站，所以开始寻找替代品。之后在Azure提供OpenAI Service之后利用学生包和学校的名义开通了GPT-3.5和GPT-4的服务（目前学生包已无法申请开题OpenAIService），算是比较好用，但是对调用速率限制的很严格，只适合在Zotero中拿来看论文，拿来翻译网页不太好使。再之后，又尝试了Google的Gemini，也是会有速率的问题，遂注册了三个Google账号去申请API Key，然后自建了一个One-API，利用多个key进行轮询，使用起来也挺不错的，但是翻译效果有些时候不太满意。再然后也尝试过Groq上的Llama-3，这个优点是快和免费，但是效果也一般般，不过用来翻译网页也足够了。后面还试过一些国产的比如零一万物、Qwen还有文心一言，但都没有用多久就不用了。</p><p>然后是到了最近，One-API遇上了投毒事件，于是就先停了这个服务，正好DeepSeek-V3发布，挺多人推荐，就试了一下，感觉翻译效果挺好的，而且价格实惠、没有调用速率的限制，使用了几天觉得挺不错的，决定后面都换这个了。</p><p>目前是在Zotero和网页插件中配置了DeepSeek，在网页端本来一直用的沉浸式翻译这个插件，但是最近看到了一些关于他的负面新闻，所以切换到了Trancy，一个类似的插件。Trancy支持的自定义模型不多，只有OpenAI和DeepL，不过DeepSeek兼容OpenAI的调用方式，所以试了一下，刚开始遇到了一点问题，自定义域名里不能填DeepSeek官方文档给的“https://api.deepseek.com”或者用来兼容OpenAI的“https://api.deepseek.com/v1”，需要填入完整的“https://api.deepseek.com/v1/chat/completions”，然后就可以正常使用了，另外Zotero中的翻译插件也是需要填这个地址。</p><script type="module">const injectHtml = (root, html) => {
+  const iframe = document.createElement("iframe");
+  const htmlContent = `<html><head></head><body>${html}</body></html>`;
+  iframe.style.width = "100%";
+  iframe.style.height = "100%";
+  iframe.onload = () => {
+    const doc = iframe.contentDocument || iframe.contentWindow?.document;
+    if (!doc) {
+      return;
+    }
+    doc.open();
+    doc.write(htmlContent);
+    doc.close();
+  };
+  root.replaceChildren(iframe);
+}
+  document.querySelectorAll('.playground')?.forEach(el=>{
+    const html = el.getAttribute('data-html');
+    if (html) {
+      injectHtml(el,html);
+    }
+    const indicator = document.createElement("div");
+    indicator.className = "indicator";
+    const showCode = document.createElement("div");
+    showCode.className = "show-code";
+    showCode.innerText = "code";
+    showCode.onclick = () => {
+      el.parentElement.classList.remove("preview-only");
+    };
+    const showPreview = document.createElement("div");
+    showPreview.className = "show-preview";
+    showPreview.innerText = "preview";
+    showPreview.onclick = () => {
+      el.parentElement.classList.add("preview-only");
+    };
+    indicator.appendChild(showCode);
+    indicator.appendChild(showPreview);
+    el.parentElement.appendChild(indicator);
+    if (window.screen.width < 768) {
+      showPreview.click();
+    }
+  });</script></div> <div data-page-id="大模型翻译折腾记录" class="navigator flex justify-between items-center mt-4 py-4"> <a href="/post/ToDoFrp-stcp与xtcp折腾记录" class="flex items-center gap-1 text-blue cursor-pointer flex-[45%]"> <div class="i-ri:arrow-left-double-line w-5 h-5 flex-shrink-0"></div> <div class="text-start">ToDo&quot;Frp stcp与xtcp折腾记录&quot;</div> </a> <div></div> </div> </div> <div class="outline-wrapper"></div> </main>  <footer class="mt-8 flex justify-center"> <small class="w-full max-w-[720px] min-h-12 flex justify-center items-center opacity-80"> <a href="https://github.com/glink25" target="_blank">© Glink</a> </small> </footer> </body></html>
